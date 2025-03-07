@@ -1,18 +1,7 @@
 use 5.006001;
 use strict;
 
-BEGIN {
-  die "CPANPLUS::Dist::Build version 0.08 or later is required to install Module::Build\n"
-    if $INC{'CPANPLUS/Dist/Build.pm'} && CPANPLUS::Dist::Build->VERSION lt '0.08';
-}
-
-# On some platforms (*ahem*, MacPerl 5.6.1) "use lib qw(lib);" doesn't
-# find the local "lib" directory, so we use File::Spec to do it properly.
-use File::Spec 0.82;
-use lib File::Spec->catdir('lib');          # use our self to install
-# XXX This doesn't carry over to sub processes
-use lib File::Spec->catdir('t', 'bundled'); # use bundled modules
-use lib File::Spec->catdir('t', 'lib');     # our utilities
+use lib 'lib';          # use our self to install
 
 # bootstrap configure_requires prereqs
 BEGIN { do './inc/bootstrap.pl' }
@@ -60,7 +49,6 @@ my $build = Module::Build->new(
     'Perl::OSType'          => ( $^O eq 'bitrig' ? 1.004 : 1 ), # needs 1.0 API
     'version'               => 0.87,  # No longer requires M::B
     'Module::Metadata'      => 1.000002, # uses version.pm
-    'Pod::Man'              => 2.17, # utf8 support
     ($^O eq 'MSWin32' ? ('ExtUtils::PL2Bat' => 0) : ())
   },
   test_requires         => {

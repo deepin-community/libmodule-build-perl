@@ -8,18 +8,21 @@ Uploaders: Niko Tyni <ntyni@debian.org>,
 Section: perl
 Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Build-Depends: debhelper-compat (= 12)
-Build-Depends-Indep: libcpan-meta-perl <!nocheck>,
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: dh-sequence-bash-completion,
+                     libcpan-meta-perl <!nocheck>,
                      libpar-dist-perl <!nocheck>,
                      libtest-harness-perl <!nocheck>,
                      perl
-Standards-Version: 4.5.0
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libmodule-build-perl
 Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libmodule-build-perl.git
 Homepage: https://metacpan.org/release/Module-Build
+Rules-Requires-Root: no
 
 Package: libmodule-build-perl
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends},
          ${perl:Depends},
          libcpan-meta-perl,

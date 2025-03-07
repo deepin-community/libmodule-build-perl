@@ -1,3 +1,38 @@
+libmodule-build-perl (0.423400-2) unstable; urgency=medium
+
+  * Mark as Multi-Arch: foreign to try to enable cross-building for
+    packages build-dependiung on libmodule-build-perl.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 03 Dec 2023 00:43:55 +0100
+
+libmodule-build-perl (0.423400-1) unstable; urgency=medium
+
+  * Import upstream version 0.423400.
+  * Drop debian/patches/man-ext.
+    Not needed anymore since 7e5aefa:
+    "Respect $Config{man1ext}/$Config{man3ext}".
+  * Update years of upstream and packaging copyright.
+  * Install bash completion properly and not as an example.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 25 Jun 2023 00:14:33 +0200
+
+libmodule-build-perl (0.423200-1) unstable; urgency=medium
+
+  * Import upstream version 0.423200.
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.6.2.
+  * Set Rules-Requires-Root: no.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 17 Dec 2022 18:07:55 +0100
+
+libmodule-build-perl (0.423100-2) unstable; urgency=medium
+
+  [ Jenkins ]
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Sun, 16 Oct 2022 05:15:58 +0100
+
 libmodule-build-perl (0.423100-1) unstable; urgency=medium
 
   [ Debian Janitor ]
